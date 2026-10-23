@@ -193,17 +193,17 @@ function short(value: string) {
 
 export default function Home() {
   const fileInput = useRef<HTMLInputElement>(null);
-  const [data, setData] = useState<Data | null>(null);
-  const [original, setOriginal] = useState<Data | null>(null);
-  const [filename, setFilename] = useState("");
+  const [data, setData] = useState<Data | null>(demo);
+  const [original, setOriginal] = useState<Data | null>(demo);
+  const [filename, setFilename] = useState("demo_students.csv");
   const [tab, setTab] = useState("Overview");
-  const [metric, setMetric] = useState("");
-  const [category, setCategory] = useState("");
-  const [xColumn, setXColumn] = useState("");
+  const [metric, setMetric] = useState("Marks");
+  const [category, setCategory] = useState("Department");
+  const [xColumn, setXColumn] = useState("Study_Hours_Per_Day");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState("Start with a CSV or load the demo.");
+  const [message, setMessage] = useState("Fictional demo data is ready: 53 rows. Upload your own CSV to explore your data.");
   const [error, setError] = useState("");
 
   const headers = data?.headers ?? [];
@@ -473,8 +473,8 @@ export default function Home() {
             Private by design
           </p>
           <p className="mt-2 text-xs leading-6 text-teal-700">
-            CSV processing happens in this browser tab. Refreshing clears the
-            loaded data.
+            CSV processing happens in this browser tab. Refreshing restores the
+            fictional demo data.
           </p>
         </div>
 
